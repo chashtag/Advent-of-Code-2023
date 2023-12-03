@@ -1,0 +1,2 @@
+#!/usr/bin/env python3
+(oo:=list(filter(lambda x: x.strip() ,open('./day1.input').readlines())),d:=[('one','1'),('two', '2'),('three', '3'),('four', '4'),('five', '5'),('six', '6'),('seven', '7'),('eight', '8'),('nine', '9'),('zero', '0')][::-1],print(sum([int(''.join(((a:=list(filter(lambda x:x.isdigit(), x)),print(print(f'{x.strip()} {a[0]}{a[-1]}')),a[0],a[-1])[2:])))for x in ([[(oo.insert(i,oo[i].replace(pp[0],f'{pp[0]}{pp[1]}{pp[0]}')),oo.pop(i+1)) for pp in d] for i,t in list(enumerate(oo))],oo)[-1] ])))

@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - set_fact:
+        dataset: "{{ lookup('file','./day1.input') | split('\n') | list }}"
+    
+    - set_fact:
+        numbers: |
+          {% for line in dataset %}
+          {{ (line | regex_findall('\d') | join)[0] -}}
+          {{- (line | regex_findall('\d') | join)[-1] }}
+          {% endfor %}
+
+    - debug:
+        msg: "{{ numbers | split('\n') | map('int') | sum  }}"
